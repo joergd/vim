@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/mark/Sites/PersonalProjects/blog'
 let g:netrw_dirhist_2='/Users/mark/Sites/Unboxed/five-tv'
+let g:netrw_dirhist_3='/Volumes/dev/c5/hero'

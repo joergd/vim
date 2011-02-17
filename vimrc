@@ -55,7 +55,7 @@
     set showmode                   " display the current mode
 
     set cursorline              " highlight current line
-    color wombat256
+    color zenburn
     hi cursorline guibg=#333333 " highlight bg color of current line
 
     if has('cmdline_info')
@@ -87,10 +87,6 @@
     set scrolloff=3                " minimum lines to keep above and below cursor
     set foldenable                 " auto fold code
     set gdefault                   " the /g flag on :s substitutions by default
-
-    " Highlight any text that goes beyond the 80th character of a line
-    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-    match OverLength /\%81v.\+/
 " }
 
 " Formatting {
@@ -140,13 +136,16 @@
     nnoremap <silent> <Leader>fb :FufBuffer<CR>
     nnoremap <silent> <Leader>ff :FufFile<CR>
     nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
-    nnoremap <silent> <Leader>t :TlistToggle<CR>
+    " nnoremap <silent> <Leader>t :TlistToggle<CR>
 
     " Shortcut to edit my .vimrc
     nmap <silent> <leader>ev :e $MYVIMRC<cr>
 
     " Reload my .vimrc to apply any changes made
     nmap <silent> <leader>sv :so $MYVIMRC<cr>
+    
+    " cmd-ENTER like Textmate
+    inoremap <D-CR> <ESC>o
 " }
 
 " Plugins {
@@ -157,6 +156,7 @@
 	
 	" NERDTree {
       let NERDTreeChDirMode = 2
+      let NERDTreeQuitOnOpen = 0
 	" }
 
 	" Vimwiki {
@@ -184,7 +184,7 @@
 
     " Version specific settings {
         if has("gui_macvim")
-          set guifont=Menlo:h12                 " set font
+          set guifont=DroidSansMono:h14        " use Monaco 10pt
           set fuoptions=maxvert,maxhorz         " fullscreen options (MacVim only), resized window when changed to fullscreen (max lines and columns)
           "autocmd GUIEnter * set fullscreen 		" enter fullscreen mode when GUI opens
         elseif has("gui_gtk2")
